@@ -1,5 +1,5 @@
 @startuml override-skin
-'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/src/colors.puml
+'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/colors.puml
 ' uncomment the following line and comment the first to use locally
 !include colors.puml
 
