@@ -1,0 +1,145 @@
+@startuml 交易相关主要类图
+
+'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/core.puml
+' uncomment the following line and comment the first to use locally
+!include core.puml
+'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/class-diagram-helper.puml
+' uncomment the following line and comment the first to use locally
+!include class-diagram-helper.puml
+
+
+GREY_ARROW
+'skinparam Shadowing true
+caption 交易服务重构
+
+
+class TranscationPersistenceServiceFactory {
+    +获取交易数据持久化接口()
+}
+
+interface ITranscationPersistenceService {
+    +新增支付记录()
+    +重新支付处理交易处理()
+    +更新支付成功结果()
+    +更新退款结果()
+}
+
+class DefaultTranscationPersistenceService{
+
+}
+class CrowdfundingTranscationPersistenceService{
+
+}
+
+note left of ITranscationPersistenceService
+    交易数据持久化接口
+end note
+
+
+class SourceOrderServiceFactory{
+    +获取订单服务接口()
+}
+
+interface ISourceOrderService {
+    +获取订单列表()
+    +通知支付结果()
+    +通知退款结果()
+}
+class DefaultSourceOrderService{
+
+}
+class CrowdfundingSourceOrderService{
+
+}
+
+
+note right of ISourceOrderService
+    订单信息相关接口
+    用于获取订单信息
+    发送订单状态变更通知
+end note
+
+note left of TranscationService: 交易服务
+
+class TranscationService {
+
+    -Dictionary<string,ITranscationPersistenceService> transPersistences
+    -Dictionary<string,ISourceOrderService> sourceOrders
+    -Dictionary<string,IPayment> payments
+
+    +预支付()
+    -处理支付结果()
+    +退款()
+    -处理对款结果()
+}
+class PaymentNotifyService{
+    +支付成功通知()
+    +退款结果通知()
+}
+
+note right of IPayment
+    实际第三方支付接口
+    1. 预支付: 根据客户端支付参数，返回支付消息体
+    用于客户端打开第三方支付APP
+    2. 支付结果校验，支付结果通知的校验和解包
+    3. 退款结果校验, 退款结果的校验和解包
+end note
+
+
+class PaymentFactory{
+    
+    +获取支付接口()
+}
+
+interface IPayment{
+    +预支付()
+    +支付结果校验()
+    +退款结果校验()
+}
+
+
+class AliPayment{
+
+}
+class WechatPayment{
+
+}
+
+Dependency(PaymentNotifyService,TranscationService,"调用")
+'PaymentNotifyService  --> TranscationService :调用
+
+Dependency(TranscationService,PaymentFactory,"依赖")
+'TranscationService ..> PaymentFactory :依赖
+
+Dependency(TranscationService,TranscationPersistenceServiceFactory,"依赖")
+Dependency(TranscationService,SourceOrderServiceFactory,"依赖")
+
+'TranscationService ..> TranscationPersistenceServiceFactory :依赖
+'TranscationService ..> SourceOrderServiceFactory :依赖
+
+
+Dependency(PaymentFactory,IPayment,"依赖")
+Dependency(TranscationPersistenceServiceFactory,ITranscationPersistenceService,"依赖")
+Dependency(SourceOrderServiceFactory,ISourceOrderService,"依赖")
+
+'PaymentFactory ..> IPayment
+'TranscationPersistenceServiceFactory ..> ITranscationPersistenceService
+'SourceOrderServiceFactory ..> ISourceOrderService
+
+Realize(AliPayment,IPayment,"实现")
+Realize(WechatPayment,IPayment,"实现")
+'IPayment <|-- AliPayment :实现
+'IPayment <|-- WechatPayment :实现
+
+Realize(DefaultTranscationPersistenceService,ITranscationPersistenceService,"实现")
+Realize(CrowdfundingTranscationPersistenceService,ITranscationPersistenceService,"实现")
+
+'ITranscationPersistenceService <|-- DefaultTranscationPersistenceService :实现
+'ITranscationPersistenceService <|-- CrowdfundingTranscationPersistenceService :实现
+
+Realize(DefaultSourceOrderService,ISourceOrderService,"实现")
+Realize(CrowdfundingSourceOrderService,ISourceOrderService,"实现")
+'ISourceOrderService <|-- DefaultSourceOrderService :实现
+'ISourceOrderService <|-- CrowdfundingSourceOrderService :实现
+
+@enduml

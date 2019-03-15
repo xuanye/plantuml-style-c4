@@ -1,0 +1,41 @@
+@startuml activity-new-sample
+'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/core.puml
+' uncomment the following line and comment the first to use locally
+!include core.puml
+
+GREEN_ARROW
+
+'Copyright (c) 2013-2015 Ken Barker
+
+title HTTP Request Parsing States
+
+[*] --> RequestLine
+
+RequestLine : Parse HTTP
+RequestLine : request line
+RequestLine --> Headers : Ok
+RequestLine --> Error : Failure
+
+Headers : Parse HTTP
+Headers : headers
+Headers --> Host : Ok
+Headers --> Error : Failure
+
+Host : Check host
+Host : header is present
+Host --> Length : Not chunked
+Host --> Chunked : Chunked
+Host --> Error : Failure
+
+Length : Check if required,
+Length : valid & size
+Length --> Error : Failure
+Length --> Error : Entity Too Large
+Length --> [*] : Ok
+
+Chunked : Parse HTTP
+Chunked : chunk header
+Chunked --> Error : Failure
+Chunked --> [*] : Ok
+
+@enduml

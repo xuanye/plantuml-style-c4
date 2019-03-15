@@ -1,0 +1,42 @@
+@startuml sequence-sample
+'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/core.puml
+' uncomment the following line and comment the first to use locally
+!include core.puml
+
+' 设置方向
+'LAYOUT_LEFT_RIGHT
+'LAYOUT_TOP_DOWN
+'LAYOUT_AS_SKETCH
+' 设置红色箭头，分图定义有冲突
+RED_ARROW
+'MEGENTA_ARROW
+
+title <size:20>Sample Sequence</size>
+
+actor User
+participant "First Class" as A
+participant "Second Class" as B
+participant "Last Class" as C
+
+User -> A: DoWork
+activate A
+note over A: this is a first note
+A -> B: Create Request
+activate B
+
+B -> C: DoWork
+activate C
+C --> B: WorkDone
+destroy C
+
+B --> A: Request Created
+deactivate B
+
+A --> User: Done
+deactivate A
+
+
+@enduml
+
+
+

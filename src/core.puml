@@ -1,0 +1,34 @@
+@startuml core
+'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/colors.puml
+' uncomment the following line and comment the first to use locally
+!include colors.puml
+
+'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/skinparam.puml
+' uncomment the following line and comment the first to use locally
+!include skinparam.puml
+
+!define LAYOUT_TOP_DOWN top to bottom direction
+!define LAYOUT_LEFT_RIGHT left to right direction
+
+!definelong LAYOUT_AS_SKETCH
+skinparam backgroundColor #EEEBDC
+skinparam handwritten true
+'skinparam defaultFontName "Comic Sans MS"
+center footer <font color=red>Warning:</font> Created for discussion, needs to be validated
+!enddefinelong
+
+
+!define RED_ARROW skinparam ArrowColor Red
+!define MEGENTA_ARROW skinparam ArrowColor Magenta
+!define GREEN_ARROW skinparam ArrowColor MD_GREEN_200
+!define GREY_ARROW skinparam ArrowColor Grey
+
+
+
+' help layer
+!define Lay_D(e_from, e_to) e_from -[hidden]D- e_to
+!define Lay_U(e_from, e_to) e_from -[hidden]U- e_to
+!define Lay_R(e_from, e_to) e_from -[hidden]R- e_to
+!define Lay_L(e_from, e_to) e_from -[hidden]L- e_to
+
+@enduml

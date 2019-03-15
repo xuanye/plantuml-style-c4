@@ -1,0 +1,203 @@
+@startuml override-skin
+'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/colors.puml
+' uncomment the following line and comment the first to use locally
+!include colors.puml
+
+!define TECHN_FONT_SIZE 12
+
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+skinparam ComponentStyle uml2
+skinparam Shadowing false
+
+skinparam Default {
+    'FontName  "'Microsoft YaHei Mono','Ubuntu Mono',Menlo, Monaco, 'Courier New', monospace"
+    FontColor Black
+    FontSize  14
+    FontStyle plain
+    Shadowing false
+    TextAlignment center
+}
+
+skinparam Note {
+    'FontStyle bold
+    BackgroundColor NOTE_BG_COLOR
+    BorderColor NOTE_BORDER_COLOR
+    BorderThickness 1
+    FontColor White
+    Shadowing false
+    TextAlignment left
+}
+
+skinparam Note<<quit>> {
+
+    BackgroundColor NOTE_Q_BG_COLOR
+    BorderColor NOTE_Q_BORDER_COLOR
+}
+
+skinparam Sequence {
+    'ArrowThickness 1
+    'ArrowColor Red
+    ActorBorderThickness 1
+    LifeLineBorderColor GREEN
+    ParticipantBorderThickness 0
+    Shadowing false
+    GroupBorderColor Grey
+    GroupBackgroundColor Grey
+}
+
+skinparam Activity {
+
+    StartColor Green
+    EndColor Red
+    AttributeFontColor white
+    AttributeFontSize  15
+    AttributeFontname  Droid Sans Mono
+
+    BackgroundColor MD_BLUE_100
+    BorderColor MD_BLUE_200
+    BorderThickness 1
+
+    ArrowThickness 1
+
+
+    BarColor   MD_BLUE_900
+
+
+    DiamondBackgroundColor   MD_ORANGE_100
+    DiamondBorderColor    MD_ORANGE_200
+    'DiamondFontColor
+    'DiamondFontName
+    'DiamondFontSize
+    'DiamondFontStyle
+
+    'FontColor
+    'FontName
+    'FontSize
+    'FontStyle
+
+}
+
+skinparam Class {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_BLUE_300
+    BorderThickness 1
+    'FontColor
+    'FontName
+    'FontSize 14
+    'FontStyle
+    'AttributeFontColor MD_DORANGE_A700
+    'AttributeFontName
+    'AttributeFontSize
+    'AttributeFontStyle
+    'AttributeIconSize 8
+
+
+    'HeaderBackgroundColor
+    StereotypeFontColor MD_DORANGE_A700
+    'StereotypeFontName
+    StereotypeFontSize 1
+    'StereotypeFontStyle  
+}
+skinparam Interface {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+    'BorderThickness
+    'FontColor
+    'FontName
+    FontSize 14
+    'FontStyle
+    'AttributeFontColor MD_DORANGE_A700
+    'AttributeFontName
+    'AttributeFontSize
+    'AttributeFontStyle
+    'AttributeIconSize 8
+
+
+    'HeaderBackgroundColor
+    StereotypeFontColor MD_DORANGE_A700
+    'StereotypeFontName
+    StereotypeFontSize 1
+    'StereotypeFontStyle
+}
+
+skinparam Participant {
+    BackgroundColor EL_BG_COLOR_800
+    BorderColor EL_BORDER_COLOR_800
+    FontColor White
+    Shadowing false
+}
+
+skinparam Actor {
+    BackgroundColor EL_BG_COLOR_800
+    BorderColor EL_BORDER_COLOR_800
+    Shadowing false
+}
+
+skinparam UseCase {
+    BackgroundColor EL_BG_COLOR_300
+    BorderColor EL_BG_COLOR_300
+    Shadowing false
+    'BackgroundColor << Main >> YellowGreen
+    'BorderColor << Main >> YellowGreen
+
+    ArrowThickness 1
+    ArrowColor EL_BORDER_COLOR_800
+
+    ActorBackgroundColor EL_BG_COLOR_800
+    ActorBorderColor MD_BLUE_900
+    ActorShadowing false
+ 
+}
+
+
+skinparam State {
+    'FontColor          MD_BLUE_600   
+    FontSize           17
+
+    'AttributeFontColor MD_BLUE_300
+    AttributeFontSize  14
+    'AttributeFontname  Droid Sans Mono
+    
+    BackgroundColor    MD_BLUE_100
+    BorderColor        MD_BLUE_200
+    StartColor Green
+    EndColor Red
+}
+
+skinparam Partition {
+    BorderColor MD_GRAY_800
+    BorderStyle dashed
+    'BackgroundColor
+
+    BorderThickness 1
+    'FontColor
+    'FontName
+    'FontSize
+    'FontStyle
+}
+
+skinparam rectangle {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam database {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+
+skinparam rectangle<<usercase>> {
+    Shadowing false
+    StereotypeFontSize 0
+    FontColor MD_GRAY_800
+    BorderColor MD_GRAY_800
+    BorderStyle dashed
+}
+
+!define UserCasePackage(e_alias, e_label) rectangle "==e_label" <<usercase>> as e_alias
+!define UserCasePackage(e_alias, e_label, e_type) rectangle "==e_label\n<size:TECHN_FONT_SIZE>[e_type]</size>" <<usercase>> as e_alias
+
+@enduml
