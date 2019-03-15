@@ -1,7 +1,7 @@
 @startuml override-skin
-'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/colors.puml
+!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/colors.puml
 ' uncomment the following line and comment the first to use locally
-!include colors.puml
+'!include colors.puml
 
 !define TECHN_FONT_SIZE 12
 
@@ -284,6 +284,7 @@ skinparam rectangle<<usercase>> {
     FontColor MD_GRAY_800
     BorderColor MD_GRAY_800
     BorderStyle dashed
+    BackgroundColor White
 }
 
 !define UserCasePackage(e_alias, e_label) rectangle "==e_label" <<usercase>> as e_alias

@@ -1,6 +1,5 @@
 @startuml class-diagram-helper
 
-'啥? 
 
 !define CLASS_LINE_FONT_SIZE 12
 

@@ -1,6 +1,7 @@
-' !includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/c4_context.puml
+@startuml c4_container
+!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/c4_context.puml
 ' uncomment the following line and comment the first to use locally
-!include c4_context.puml
+'!include c4_context.puml
 
 ' Scope: A single software system.
 ' Primary elements: Containers within the software system in scope.
@@ -65,3 +66,5 @@ endlegend
 ' ##################################
 
 !define Container_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "Container")
+
+@enduml
