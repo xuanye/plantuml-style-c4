@@ -6,7 +6,7 @@
 
 '!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/c4_theme.puml
 ' uncomment the following line and comment the first to use locally
-!include c4-theme.puml
+!include c4_theme.puml
 
 ' Colors
 ' ##################################
@@ -40,6 +40,7 @@ skinparam rectangle<<boundary>> {
     FontColor MD_GRAY_800
     BorderColor MD_GRAY_800
     BorderStyle dashed
+    BackgroundColor White
 }
 
 
