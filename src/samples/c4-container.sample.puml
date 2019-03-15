@@ -1,5 +1,5 @@
 @startuml container-diagram
-'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/c4_container.puml
+'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/src/c4_container.puml
 ' uncomment the following line and comment the first to use locally
 !include c4_container.puml
 

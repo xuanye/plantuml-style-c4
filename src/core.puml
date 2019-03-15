@@ -1,9 +1,9 @@
 @startuml core
-'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/colors.puml
+'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/src/colors.puml
 ' uncomment the following line and comment the first to use locally
 !include colors.puml
 
-'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/skinparam.puml
+'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/src/skinparam.puml
 ' uncomment the following line and comment the first to use locally
 !include skinparam.puml
 
@@ -21,8 +21,8 @@ center footer <font color=red>Warning:</font> Created for discussion, needs to b
 !define RED_ARROW skinparam ArrowColor Red
 !define MEGENTA_ARROW skinparam ArrowColor Magenta
 !define GREEN_ARROW skinparam ArrowColor MD_GREEN_200
-!define GREY_ARROW skinparam ArrowColor Grey
-
+!define GREY_ARROW skinparam ArrowColor DC_1
+!define YELLOW_ARROW skinparam ArrowColor Yellow
 
 
 ' help layer

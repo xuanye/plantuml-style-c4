@@ -1,5 +1,5 @@
 @startuml override-skin
-'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/colors.puml
+'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/src/colors.puml
 ' uncomment the following line and comment the first to use locally
 !include colors.puml
 
@@ -18,6 +18,8 @@ skinparam Default {
     FontStyle plain
     Shadowing false
     TextAlignment center
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
 }
 
 skinparam Note {
@@ -95,11 +97,14 @@ skinparam Class {
 
 
     'HeaderBackgroundColor
-    StereotypeFontColor MD_DORANGE_A700
+    StereotypeFontColor DC_7
     'StereotypeFontName
-    StereotypeFontSize 1
+    StereotypeFontSize 14
     'StereotypeFontStyle  
 }
+
+
+
 skinparam Interface {
     BackgroundColor MD_BLUE_50
     BorderColor MD_GRAY_800
@@ -116,11 +121,13 @@ skinparam Interface {
 
 
     'HeaderBackgroundColor
-    StereotypeFontColor MD_DORANGE_A700
+    StereotypeFontColor DC_7
     'StereotypeFontName
     StereotypeFontSize 1
     'StereotypeFontStyle
 }
+
+
 
 skinparam Participant {
     BackgroundColor EL_BG_COLOR_800
@@ -188,6 +195,88 @@ skinparam database {
     shadowing false
 }
 
+skinparam Queue {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+skinparam Agent {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+skinparam Artifact {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+
+skinparam Boundary {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+skinparam Card {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+
+skinparam Cloud {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+
+skinparam Component {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+skinparam Control {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+skinparam Database {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+
+skinparam Entity {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+skinparam File {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+skinparam Folder {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+   
+}
+skinparam Frame {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+skinparam Node {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+
+
+skinparam Package {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+    'BorderStyle dashed
+}
+skinparam Stack {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+
+skinparam Rectangle {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+
+skinparam Storage {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
 
 skinparam rectangle<<usercase>> {
     Shadowing false

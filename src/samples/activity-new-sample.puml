@@ -1,5 +1,5 @@
 @startuml activity-new-sample
-'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/core.puml
+'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/src/core.puml
 ' uncomment the following line and comment the first to use locally
 !include core.puml
 
@@ -17,7 +17,7 @@ if (Page.onSecurityCheck) then (true)
             stop
         endif
         if (isPost?) then (yes)
-            :Page.onPost();
+            :Page.onPost();<
         else (no)
             :Page.onGet();
         endif

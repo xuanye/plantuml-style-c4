@@ -1,0 +1,30 @@
+@startuml element
+'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/src/core.puml
+' uncomment the following line and comment the first to use locally
+!include core.puml
+
+
+
+
+actor actor
+agent agent
+artifact artifact
+boundary boundary
+card card
+cloud cloud
+component component
+control control
+database database
+entity entity
+file file
+folder folder
+frame frame
+interface  interface
+node node
+package package
+queue queue
+stack stack
+rectangle rectangle
+storage storage
+usecase usecase
+@enduml
