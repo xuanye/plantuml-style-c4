@@ -1,4 +1,4 @@
-@startuml 交易相关主要类图
+@startuml class-sample
 
 !includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/core.puml
 ' uncomment the following line and comment the first to use locally

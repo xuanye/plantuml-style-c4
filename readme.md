@@ -67,7 +67,7 @@ RED_ARROW
 以下为示例
 
 ```
-@startuml 交易相关主要类图
+@startuml class-sample
 
 !includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/core.puml
 ' uncomment the following line and comment the first to use locally
@@ -443,4 +443,4 @@ Lay_U(mail_system, customer)
 
 ## 参考
 C4 Model的配色和实现大部分都是直接使用
-[https://github.com/RicardoNiepel/C4-PlantUML](https://github.com/RicardoNiepel/C4-PlantUML)的,只有几个配色略有跳转，并抽取出颜色的文件，可单独替换c4_theme 以实现其他配色
+[https://github.com/RicardoNiepel/C4-PlantUML](https://github.com/RicardoNiepel/C4-PlantUML)的,只有几个配色略有调整，并抽取出颜色的文件，可单独替换c4_theme 以实现其他配色
