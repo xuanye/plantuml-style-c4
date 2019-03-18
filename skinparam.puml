@@ -146,9 +146,9 @@ skinparam UseCase {
     BackgroundColor EL_BG_COLOR_300
     BorderColor EL_BG_COLOR_300
     Shadowing false
-    'BackgroundColor << Main >> YellowGreen
-    'BorderColor << Main >> YellowGreen
-
+    'BackgroundColor<<Main>> YellowGreen
+    'BorderColor<<Main>> YellowGreen
+    'FontColor White
     ArrowThickness 1
     ArrowColor EL_BORDER_COLOR_800
 

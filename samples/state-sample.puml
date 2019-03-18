@@ -1,11 +1,9 @@
-@startuml activity-new-sample
+@startuml state-sample
 !includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/core.puml
 ' uncomment the following line and comment the first to use locally
 '!include core.puml
 
 GREEN_ARROW
-
-'Copyright (c) 2013-2015 Ken Barker
 
 title HTTP Request Parsing States
 
