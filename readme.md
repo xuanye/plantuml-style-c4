@@ -268,7 +268,7 @@ LAYOUT_WITH_LEGEND
 
 title System Context diagram for Internet Banking System
 
-Person(customer, "Personal Banking Customer", "A customer of the bank, with personal bank accounts.")
+Actor(customer, "Personal Banking Customer", "A customer of the bank, with personal bank accounts.")
 System(banking_system, "Internet Banking System", "Allows customers to view information about their bank accounts, and make payments.")
 
 System_Ext(mail_system, "E-mail system", "The internal Microsoft Exchange e-mail system.")
@@ -332,4 +332,11 @@ Rel_Neighbor(backend_api, banking_system, "Uses", "sync/async, XML/HTTPS")
 @enduml
 ```
 
-![]()
+![容器图](http://www.plantuml.com/plantuml/png/9Sqz2iCm3CNnlQTe3s1hoTGfLr4LqHXanUY3DhTlJQO73txyLm-qo2wtHrEIt3XDxdl4y2U0uQU-M-pvIcUZGuCrAXqTlebwCWn1dRfudCA55kZemGQEVGWxq58cmwPivJhhcBcLTVll3m00)
+
+### 3.Component
+
+组件图
+
+```
+```

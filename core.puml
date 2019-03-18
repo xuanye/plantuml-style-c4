@@ -7,6 +7,8 @@
 ' uncomment the following line and comment the first to use locally
 '!include skinparam.puml
 
+!define TECHN_FONT_SIZE 12
+
 !define LAYOUT_TOP_DOWN top to bottom direction
 !define LAYOUT_LEFT_RIGHT left to right direction
 
@@ -30,5 +32,9 @@ center footer <font color=red>Warning:</font> Created for discussion, needs to b
 !define Lay_U(e_from, e_to) e_from -[hidden]U- e_to
 !define Lay_R(e_from, e_to) e_from -[hidden]R- e_to
 !define Lay_L(e_from, e_to) e_from -[hidden]L- e_to
+
+
+!define UserCasePackage(e_alias, e_label) rectangle "==e_label" <<usercase>> as e_alias
+!define UserCasePackage(e_alias, e_label, e_type) rectangle "==e_label\n<size:TECHN_FONT_SIZE>[e_type]</size>" <<usercase>> as e_alias
 
 @enduml

@@ -3,7 +3,7 @@
 ' uncomment the following line and comment the first to use locally
 '!include colors.puml
 
-!define TECHN_FONT_SIZE 12
+
 
 
 skinparam wrapWidth 200
@@ -287,7 +287,5 @@ skinparam rectangle<<usercase>> {
     BackgroundColor White
 }
 
-!define UserCasePackage(e_alias, e_label) rectangle "==e_label" <<usercase>> as e_alias
-!define UserCasePackage(e_alias, e_label, e_type) rectangle "==e_label\n<size:TECHN_FONT_SIZE>[e_type]</size>" <<usercase>> as e_alias
 
 @enduml
