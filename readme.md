@@ -1,6 +1,8 @@
 自定义PlantUml和C4 Model样式
 ---
 
+![草稿流程图](https://www.plantuml.com/plantuml/img/RLF1Rjim3BthAxXJaqFioqxEW3K8qdROi1P9Xs6dG9FfMAWiUHBLp7y_oevTUAaEjapoFJu-oRU1fAVO692AzAkcRcNnl0goQGsA3zeg4qkCta1Dr8OYpxqyPoTDTVmT0thbBA6bJBac_nkbxJ1lZRI9SHMeCxXI7_D61aAVA-SnQpaZRY1QHZIC1AeHAcUCEsjx0gCjWhGbpDBQ1zuvu8vWd9B6TE9c50TllE9-lzjzFsxs-yUVujlcr-EFv-FcS3nytJrl7uJePnN5rcZrSa3_Qf2ocfiPtEEVY84MoxKeU7vevGdNGbUmUE9Tvkm1LVJiphP6zR9CgYmio4TS2k1LNCg-MDsJf5X2wt3d_5dwylE8iMv032Zl58O0oKNlJ5XFgGHEKMqZGZkKiJ_lqgGLoBLJ06sfgncL3aykq8JkCCpXe_vKnVe_lL4PjlogsrX-ZzEqrtt7eZs7qOzrGyr0Mqb-BSKGIZ9B1nvBxL6zexKOKwCVwvvcyfh1rNzcp-OiBaV1BVh3lkYv6h0O1FTt00ZvHv24C_7zK_IMt_87txn_)
+
 ## 什么是PlantUml
 [PlantUml](http://plantuml.com/)是一个支持快速绘制的开源项目.其定义了一套完整的语言用于实现UML关系图的描述.并基于强大的graphviz图形渲染库进行UML图的生成.绘制的UML图还可以导出为图片,以及通用的矢量SVG格式文件.
 
@@ -15,7 +17,7 @@ Alice -> Bob: Another authentication Request
 Alice <-- Bob: another authentication Response
 @enduml
 ```
-![时序图](http://s.plantuml.com/imgw/sequence-diagram-kgdeozxa.webp)
+![时序图](https://www.plantuml.com/plantuml/img/TSx13O0W38NXErDqWIvWZ057S0F49f9WKIZxIyIJmVFxykVfB3P9EO8omJi2d62Ewm2co4uitbdnaM6Xgr0MLJV0QXxSKVcCd4bzOnohIs3xqOP7nARjdtxZcdYhXsy0)
 
 
 可以使用常用的编辑器vscode 或者sublime 或者其他IDE工具继承PlantUml

@@ -3,10 +3,7 @@
 ' uncomment the following line and comment the first to use locally
 '!include core.puml
 
-' 设置方向
-'LAYOUT_LEFT_RIGHT
-'LAYOUT_TOP_DOWN
-'LAYOUT_AS_SKETCH
+LAYOUT_AS_SKETCH
 ' 设置红色箭头，分图定义有冲突
 RED_ARROW
 'MEGENTA_ARROW

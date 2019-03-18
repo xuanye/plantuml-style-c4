@@ -4,6 +4,7 @@
 '!include c4_component.puml
 
 LAYOUT_WITH_LEGEND
+'LAYOUT_AS_SKETCH
 
 title Component diagram for Internet Banking System - API Application
 
