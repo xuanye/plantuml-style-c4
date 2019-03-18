@@ -8,7 +8,7 @@ LAYOUT_WITH_LEGEND
 
 title System Context diagram for Internet Banking System
 
-Person(customer, "Personal Banking Customer", "A customer of the bank, with personal bank accounts.")
+Actor(customer, "Personal Banking Customer", "A customer of the bank, with personal bank accounts.")
 System(banking_system, "Internet Banking System", "Allows customers to view information about their bank accounts, and make payments.")
 
 System_Ext(mail_system, "E-mail system", "The internal Microsoft Exchange e-mail system.")
