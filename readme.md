@@ -18,12 +18,21 @@ Alice <-- Bob: another authentication Response
 ![时序图](http://s.plantuml.com/imgw/sequence-diagram-kgdeozxa.webp)
 
 
+可以使用常用的编辑器vscode 或者sublime 或者其他IDE工具继承PlantUml
+
+也可以使用在线的版本
+[https://www.planttext.com/](https://www.planttext.com/)
+
+想了解更多PlantUml或者使用方法，可参考官网[http://plantuml.com/zh/](http://plantuml.com/zh/)，上面详细的中英文说明
+
 ## 什么是C4 Model
 [C4 Model](https://c4model.com/) 在我眼里更像是一个标准，一个方法论。让架构师、程序员、业务人员在讨论IT系统架构时候统一维度，统一标准，更方便的理解和沟通IT系统中的真实问题。**强烈推荐**！！！
 
 C4 模型由一系列分层的软件架构图组成，这些架构图用于描述上下文（Context）、容器(Container)、组件(Component)和代码(Code)。C4 图的层次结构提供了不同的抽象级别，每种抽象级别都与不同的受众有关
 
 ![C4 Model](https://c4model.com/img/bigbankplc-Containers.png)
+
+这篇Infoq的文章是有一个比较详细的介绍[https://infoq.cn/article/C4-architecture-model](https://infoq.cn/article/C4-architecture-model)
 
 
 ## 本库只是一个样式库
@@ -339,4 +348,97 @@ Rel_Neighbor(backend_api, banking_system, "Uses", "sync/async, XML/HTTPS")
 组件图
 
 ```
+@startuml component-diagram
+!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/c4_component.puml
+' uncomment the following line and comment the first to use locally
+'!include c4_component.puml
+
+LAYOUT_WITH_LEGEND
+
+title Component diagram for Internet Banking System - API Application
+
+Container(spa, "Single Page Application", "javascript and angular", "Provides all the internet banking functionality to customers via their web browser.")
+Container(ma, "Mobile App", "Xamarin", "Provides a limited subset ot the internet banking functionality to customers via their mobile mobile device.")
+ContainerDb(db, "Database", "Relational Database Schema", "Stores user registration information, hashed authentication credentials, access logs, etc.")
+System_Ext(mbs, "Mainframe Banking System", "Stores all of the core banking information about customers, accounts, transactions, etc.")
+
+Container_Boundary(api, "API Application") {
+    Component(sign, "Sign In Controller", "MVC Rest Controlle", "Allows users to sign in to the internet banking system")
+    Component(accounts, "Accounts Summary Controller", "MVC Rest Controlle", "Provides customers with a summory of their bank accounts")
+    Component(security, "Security Component", "Spring Bean", "Provides functionality related to singing in, changing passwords, etc.")
+    Component(mbsfacade, "Mainframe Banking System Facade", "Spring Bean", "A facade onto the mainframe banking system.")
+
+    Rel(sign, security, "Uses")
+    Rel(accounts, mbsfacade, "Uses")
+    Rel(security, db, "Read & write to", "JDBC")
+    Rel(mbsfacade, mbs, "Uses", "XML/HTTPS")
+}
+
+Rel(spa, sign, "Uses", "JSON/HTTPS")
+Rel(spa, accounts, "Uses", "JSON/HTTPS")
+
+Rel(ma, sign, "Uses", "JSON/HTTPS")
+Rel(ma, accounts, "Uses", "JSON/HTTPS")
+
+@enduml
 ```
+
+![组件图](https://www.plantuml.com/plantuml/img/9Or13eCm30Jll88-8F65KqzynGIh83cE5Tjg-NrJUbkDPhIhENQFojFqEALmx1ITvyDTxGdGyPrVfn-nXL4lJPp4SsaLFe5o4IYZ_F9aVZ6bia15S-fWM9N9e2nfwDfaXEaFizv_Aya-nXS0)
+
+
+### 4 Code 
+类图上面已经演示过了
+
+### 5. 扩展图
+
+```
+@startuml system-context-extend-diagram
+!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/c4_context.puml
+' uncomment the following line and comment the first to use locally
+'!include c4_context.puml
+
+'LAYOUT_TOP_DOWN
+'LAYOUT_AS_SKETCH
+LAYOUT_WITH_LEGEND
+
+title System Landscape diagram for Big Bank plc
+
+Actor(customer, "Personal Banking Customer", "A customer of the bank, with personal bank accounts.")
+
+Enterprise_Boundary(c0, "Big Bank plc") {
+    System(banking_system, "Internet Banking System", "Allows customers to view information about their bank accounts, and make payments.")
+
+    System_Ext(atm, "ATM", "Allows customers to withdraw cash.")
+    System_Ext(mail_system, "E-mail system", "The internal Microsoft Exchange e-mail system.")
+
+    System_Ext(mainframe, "Mainframe Banking System", "Stores all of the core banking information about customers, accounts, transactions, etc.")
+
+    Person_Ext(customer_service, "Customer Service Staff", "Customer service staff within the bank.")
+    Person_Ext(back_office, "Back Office Staff", "Administration and support staff within the bank.")
+}
+
+Rel_Neighbor(customer, banking_system, "Uses")
+Rel_R(customer, atm, "Withdraws cash using")
+Rel_Back(customer, mail_system, "Sends e-mails to")
+
+Rel_R(customer, customer_service, "Asks questions to", "Telephone")
+
+Rel_D(banking_system, mail_system, "Sends e-mail using")
+Rel_R(atm, mainframe, "Uses")
+Rel_R(banking_system, mainframe, "Uses")
+Rel_D(customer_service, mainframe, "Uses")
+Rel_U(back_office, mainframe, "Uses")
+
+Lay_D(atm, banking_system)
+
+Lay_D(atm, customer)
+Lay_U(mail_system, customer)
+
+@enduml
+```
+![扩展图](https://www.plantuml.com/plantuml/img/9Oqv3i90303xl08UiEic5LM-OXoBHF8wAnyY-JqBTAEHHhDue4KscQRxhYIvSfhSjeZk3m33TttjiUKpdOqE3TQeT3Gu4_LYw8BwpOl79LneXeOURE3Okh03pONFKQtbRsh_pPPX1dm0)
+
+
+## 参考
+C4 Model的配色和实现大部分都是直接使用
+[https://github.com/RicardoNiepel/C4-PlantUML](https://github.com/RicardoNiepel/C4-PlantUML)的,只有几个配色略有跳转，并抽取出颜色的文件，可单独替换c4_theme 以实现其他配色
