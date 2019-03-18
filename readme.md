@@ -166,7 +166,7 @@ UserCasePackage("checkout","买单") {
 
 ```
 
-![用例图](http://www.plantuml.com/plantuml/png/9Oqx3i9030LxJW47oBgXeifLZFD48dcTbJ-2t1uYgj4KevaZsREwNcwRYTQ2ShskcICUHCxlzjfohMS5N7PBM3RPEtsAxG0DPJlhAV9GJ7Adpf5m2kv34LG1uS3qzpREqmnRVlm2)
+![用例图](http://www.plantuml.com/plantuml/img/9Oqx3i9030LxJW47oBgXeifLZFD48dcTbJ-2t1uYgj4KevaZsREwNcwRYTQ2ShskcICUHCxlzjfohMS5N7PBM3RPEtsAxG0DPJlhAV9GJ7Adpf5m2kv34LG1uS3qzpREqmnRVlm2)
 
 
 
@@ -214,4 +214,122 @@ stop
 @enduml
 ```
 
-![活动图](http://www.plantuml.com/plantuml/png/9Oqx3i9030LxJW47oBgXeifLZFD48dcTbJ-2t1uYgj4KevaZsREwNcwRYTQ2ShskcICUHCxlzjfohMS5N7PBM3RPEtsAxG0DPJlhAV9GJ7Adpf5m2kv34LG1uS3qzpREqmnRVlm2)
+![活动图](https://www.plantuml.com/plantuml/img/9Or13i8m30JlVGKy8F654wT-nQGMZUIuKRoczFTGk8r66itiu85eEatNQaLZaHXwMO7kTwB1UtvMhF48br4sWnXosHgzW-qGwifsvibngAHoeyOE6UJSkeeJ5zHNnP5CzlINkVz-izZoXGy0)
+
+
+### 6. 其他组件
+
+```
+@startuml element
+!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/core.puml
+' uncomment the following line and comment the first to use locally
+'!include core.puml
+
+
+actor actor
+agent agent
+artifact artifact
+boundary boundary
+card card
+cloud cloud
+component component
+control control
+database database
+entity entity
+file file
+folder folder
+frame frame
+interface  interface
+node node
+package package
+queue queue
+stack stack
+rectangle rectangle
+storage storage
+usecase usecase
+@enduml
+```
+![其他组件](https://www.plantuml.com/plantuml/img/7Sqx3eD034NHdbKa2m0tgLAn5MTu2aYs6VcZXDqdqDtcwCwHx5agmt3Vh4ajA9VRcjdZIUJycTvRhlMgWBVT4fPJsvM-nNQ0kh2TV8my16Dxa78ad8Ar2u8WqDFqwp73bd_y0000)
+
+
+
+## C4 模型
+
+### 1.System Context 
+
+```
+@startuml system-context-diagram
+
+!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/c4_context.puml
+' uncomment the following line and comment the first to use locally
+'!include c4_context.puml
+
+LAYOUT_WITH_LEGEND
+
+title System Context diagram for Internet Banking System
+
+Person(customer, "Personal Banking Customer", "A customer of the bank, with personal bank accounts.")
+System(banking_system, "Internet Banking System", "Allows customers to view information about their bank accounts, and make payments.")
+
+System_Ext(mail_system, "E-mail system", "The internal Microsoft Exchange e-mail system.")
+System_Ext(mainframe, "Mainframe Banking System", "Stores all of the core banking information about customers, accounts, transactions, etc.")
+
+Rel(customer, banking_system, "Uses")
+Rel_Back(customer, mail_system, "Sends e-mails to")
+Rel_Neighbor(banking_system, mail_system, "Sends e-mails", "SMTP")
+Rel(banking_system, mainframe, "Uses")
+
+@enduml
+```
+
+
+![System Context](https://www.plantuml.com/plantuml/img/9Oqv3eD0301xNa4UiEk6AXLVSOmLaBncvKF0xvEGRZJIQ6OFjCWcm_3Ob2GNJfDnZUZ-130ywdkBDL_fRBHhi4QblS6Pg1T35zHVNZmkuK8JDFHW0yVMXHreAdTsHlchsk_RpBfyuGC0)
+
+
+### 2. Container 
+
+```
+@startuml container-diagram
+!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/c4_container.puml
+' uncomment the following line and comment the first to use locally
+'!include c4_container.puml
+
+LAYOUT_TOP_DOWN
+'LAYOUT_AS_SKETCH
+LAYOUT_WITH_LEGEND_CN
+
+LAYOUT_TOP_DOWN
+'LAYOUT_AS_SKETCH
+LAYOUT_WITH_LEGEND
+
+title Container diagram for Internet Banking System
+
+Actor(customer, Customer, "A customer of the bank, with personal bank accounts")
+
+System_Boundary(c1, "Internet Banking") {
+    Container(web_app, "Web Application", "Java, Spring MVC", "Delivers the static content and the Internet banking SPA")
+    Container(spa, "Single-Page App", "JavaScript, Angular", "Provides all the Internet banking functionality to cutomers via their web browser")
+    Container(mobile_app, "Mobile App", "C#, Xamarin", "Provides a limited subset of the Internet banking functionality to customers via their mobile device")
+    ContainerDb(database, "Database", "SQL Database", "Stores user registraion information, hased auth credentials, access logs, etc.")
+    Container(backend_api, "API Application", "Java, Docker Container", "Provides Internet banking functionality via API")
+}
+
+System_Ext(email_system, "E-Mail System", "The internal Microsoft Exchange system")
+System_Ext(banking_system, "Mainframe Banking System", "Stores all of the core banking information about customers, accounts, transactions, etc.")
+
+Rel(customer, web_app, "Uses", "HTTPS")
+Rel(customer, spa, "Uses", "HTTPS")
+Rel(customer, mobile_app, "Uses")
+
+Rel_Neighbor(web_app, spa, "Delivers")
+Rel(spa, backend_api, "Uses", "async, JSON/HTTPS")
+Rel(mobile_app, backend_api, "Uses", "async, JSON/HTTPS")
+Rel_Back_Neighbor(database, backend_api, "Reads from and writes to", "sync, JDBC")
+
+Rel_Back(customer, email_system, "Sends e-mails to")
+Rel_Back(email_system, backend_api, "Sends e-mails using", "sync, SMTP")
+Rel_Neighbor(backend_api, banking_system, "Uses", "sync/async, XML/HTTPS")
+@enduml
+```
+
+![]()
