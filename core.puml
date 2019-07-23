@@ -1,23 +1,23 @@
 @startuml core
-!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/colors.puml
+'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/colors.puml
 ' uncomment the following line and comment the first to use locally
-'!include colors.puml
+!include colors.puml
 
-!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/skinparam.puml
+'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/skinparam.puml
 ' uncomment the following line and comment the first to use locally
-'!include skinparam.puml
+!include skinparam.puml
 
 !define TECHN_FONT_SIZE 12
 
 !define LAYOUT_TOP_DOWN top to bottom direction
 !define LAYOUT_LEFT_RIGHT left to right direction
 
-!definelong LAYOUT_AS_SKETCH
+!function LAYOUT_AS_SKETCH()
 skinparam backgroundColor #EEEBDC
 skinparam handwritten true
 'skinparam defaultFontName "Comic Sans MS"
 center footer <font color=red>Warning:</font> Created for discussion, needs to be validated
-!enddefinelong
+!endfunction
 
 
 !define RED_ARROW skinparam ArrowColor Red

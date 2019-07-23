@@ -1,7 +1,7 @@
 @startuml c4_component
-!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/c4_container.puml
+'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/c4_container.puml
 ' uncomment the following line and comment the first to use locally
-'!include c4_container.puml
+!include c4_container.puml
 
 ' Scope: A single container.
 ' Primary elements: Components within the container in scope.
@@ -29,7 +29,7 @@ skinparam database<<component>> {
 ' Layout
 ' ##################################
 
-!definelong LAYOUT_WITH_LEGEND_CN
+!function LAYOUT_WITH_LEGEND_CN()
 hide stereotype
 legend right
 |=              |= Type |
@@ -40,10 +40,10 @@ legend right
 |<CONTAINER_BG_COLOR>   | 容器 |
 |<COMPONENT_BG_COLOR>   | 组件 |
 endlegend
-!enddefinelong
+!endfunction
 
 
-!definelong LAYOUT_WITH_LEGEND
+!function LAYOUT_WITH_LEGEND()
 hide stereotype
 legend right
 |=              |= Type |
@@ -54,7 +54,7 @@ legend right
 |<CONTAINER_BG_COLOR>   | container |
 |<COMPONENT_BG_COLOR>   | component |
 endlegend
-!enddefinelong
+!endfunction
 
 ' Elements
 ' ##################################

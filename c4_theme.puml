@@ -1,8 +1,8 @@
 @startuml c4-theme-default
 
-!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/colors.puml
+'includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/colors.puml
 ' uncomment the following line and comment the first to use locally
-'!include colors.puml
+!include colors.puml
 
 ' Colors
 ' ##################################

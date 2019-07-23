@@ -1,12 +1,12 @@
 @startuml c4-core
 
-!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/core.puml
+'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/core.puml
 ' uncomment the following line and comment the first to use locally
-'!include core.puml
+!include core.puml
 
-!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/c4_theme.puml
+'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/c4_theme.puml
 ' uncomment the following line and comment the first to use locally
-'!include c4_theme.puml
+!include c4_theme.puml
 
 ' Colors
 ' ##################################
