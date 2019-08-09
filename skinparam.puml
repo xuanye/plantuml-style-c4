@@ -46,8 +46,10 @@ skinparam Sequence {
     ParticipantBorderThickness 0
     Shadowing false
 
-    
-    GroupBorderColor MD_BLUE_200
+
+    'GroupBodyBackgroundColor
+    GroupBorderThickness 1
+    GroupBorderColor MD_BLUE_50
     GroupBackgroundColor MD_BLUE_100
 }
 
