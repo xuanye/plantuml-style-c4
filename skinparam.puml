@@ -49,7 +49,7 @@ skinparam Sequence {
 
     'GroupBodyBackgroundColor
     GroupBorderThickness 1
-    GroupBorderColor MD_BLUE_50
+    GroupBorderColor MD_BLUE_800
     GroupBackgroundColor MD_BLUE_100
 }
 
