@@ -45,8 +45,10 @@ skinparam Sequence {
     LifeLineBorderColor GREEN
     ParticipantBorderThickness 0
     Shadowing false
-    GroupBorderColor Grey
-    GroupBackgroundColor Grey
+
+    
+    GroupBorderColor MD_BLUE_200
+    GroupBackgroundColor MD_BLUE_100
 }
 
 skinparam Activity {
