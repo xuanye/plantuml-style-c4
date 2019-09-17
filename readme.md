@@ -16,7 +16,7 @@ Alice -> Bob: Another authentication Request
 Alice <-- Bob: another authentication Response
 @enduml
 ```
-![时序图](http://www.plantuml.com/plantuml/png/PP11QnD15CVlyocUlUIKh8YdfOHkDb71QY6RKZo5SVRP3CxEh3DlMkFDIp7W9r1FuaamX-95qNuQr_JcLt2cNMaMOM4PVk_t_y-RFKVSagyKkoMrKBv4RnKiY6gN9edbfuDZIGl_r3kqmcX2JGDXgkIbvtg9IQsuZdRVqL9XNznDAku8RIACnK4TStlWTJ2gO08j49uPfSofrCUWf4RWkeGEbjOHa87G2Ce8hjIIzVvT3cvoMMy_Ut9mE9jdnRnuE9db3qBLvVfYytEz-VxnSdM-MNzfFdtzy-Djy-QiUN_HhD_z-hRw_M7Ld9rlFhzcqybudasd1qUizsXoV_9ubhL7Hf8KmgwJhp2zStjOyAeEvm9VUDG2TvC8XennGSR2eKFBQcv92bbpJR1pxsg3N77dTe0xoBguG65qkSL7NRxFEtREMAo0_X2o5CRcoDZdiLgUSCAGhKtucHEq4TD2EWWVRvynGfP5TvH2RZ4gqxY7evkC4MEZE9B_7v-p7FhNTWHZev6LGRPc6LZKhg_LPhOLPPZPJi-knk8MARGHMmlieIvzfVu2)
+![时序图](https://www.plantuml.com/plantuml/img/TSx13O0W38NXErDqWIvWZ057S0F49f9WKIZxIyIJmVFxykVfB3P9EO8omJi2d62Ewm2co4uitbdnaM6Xgr0MLJV0QXxSKVcCd4bzOnohIs3xqOP7nARjdtxZcdYhXsy0)
 
 
 可以使用常用的编辑器vscode 或者sublime 或者其他IDE工具继承PlantUml
@@ -49,20 +49,36 @@ C4 模型由一系列分层的软件架构图组成，这些架构图用于描�
 在PlantUml代码中引用
 
 ```
-@startuml sequence-sample
-!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/core.puml
-' 如果使用本地，则需要注释上一行，取消注释下一行
-'!include core.puml
+@startuml
+actor User
+participant "First Class" as first
+participant "Second Class" as second
+participant "Last Class" as last
 
-' 使用红色箭头，默认为灰色
-RED_ARROW
+User -> first: DoWork
+activate first
+note right
+  this is a first note
+end note
 
+first -> second: Create Request
+activate second
+second -> last: DoWork
+activate last
+
+last --> second: WorkDone
+destroy last
+deactivate last
+second --> first: Request Created
+deactivate second
+first --> User: Done
+deactivate first
 
 @enduml
 
 ```
 
-![时序图](https://www.plantuml.com/plantuml/img/PP71RjD054NtxoiUtMJb625MKHNLTW9852h5gQgkec7yQ4QCPypCk2Nis5H4wXS0AzGL4bbKR43Ghy6aEtw16MFKH4YMxD5vzzvvrtlMCUFgKgAbbpKfJf5bPIK9xWZ5PLrGRIJEdQli88uDE-kV23UldzMM3DVAaN9zhiluLStKWk9ACXNS8kiMaY9-FowPTMHYhWtrAq-WXxNoYj8hqSq9dsifzPbG9oY58cIgm2qiZFLV6dqYIisPb0le_RiStlf2RpyvFZYSpf9ybZyUJxD7FkfcTRt-iLf_-tYpl5glFZUNNtv_lsZUdZVlhvlLkvzVbxy-B9lpg_MdDp0PZsR9P79m1BqduuVZfzEaEu8JJXBkMl6Q1lVk3lEs7yoxldRZ08O0Z3jjyD0N0vNlL71H-J9mvq6xGIQPjJl8B2RRE2VVOx71qss-pxRK6K28m6Y8oG17-aYR5o5Qd397tbjf_zAdVi9ZDnSM_SEw6WE496ZJ0MQ6WcGIzh3krYC5ICD8zhzz1Xb6VzK1ZBGYABpOw4MuMDf2dzjvTX65dzbqJzgni4L8Q2qs5W3O8rMqVnJW3m00)
+![时序图](https://www.plantuml.com/plantuml/img/PP713e8m38RlVOg6Eo_0mP10F7dI6CyBL5b4XbinyUrjsLJGP65Tz_Vlrr46DfwdMm-cOUVn6CZ3A2dRsD4CZDdM-i1OzIQ434t0ivxNaWCrRcWNcZ0drgATMTb8m03Q3lDDD2smTYVdhufY7uOfzHgSXDvUEWP4xcn0MIPUebu2IVSvW9WKnuXGOEL9dVPqdqYyFjO9CMvQe43_115JlvWlN5LKku6W5LFldb7NqhhkRVuTC64agdPPaO3I05AYRwD0SvUV9u5IHfQ_zW80)
 
 
 ### 2. 类图
