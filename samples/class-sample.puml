@@ -1,11 +1,11 @@
 @startuml class-sample
 
-!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/core.puml
+'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/core.puml
 ' uncomment the following line and comment the first to use locally
-'!include core.puml
-!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/class-diagram-helper.puml
+!include core.puml
+'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/class-diagram-helper.puml
 ' uncomment the following line and comment the first to use locally
-'!include class-diagram-helper.puml
+!include class-diagram-helper.puml
 
 
 GREY_ARROW

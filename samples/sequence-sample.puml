@@ -1,9 +1,9 @@
 @startuml sequence-sample
-!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/core.puml
+'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/core.puml
 ' uncomment the following line and comment the first to use locally
-'!include core.puml
+!include core.puml
 
-LAYOUT_AS_SKETCH
+LAYOUT_AS_SKETCH()
 ' 设置红色箭头，分图定义有冲突
 RED_ARROW
 'MEGENTA_ARROW
