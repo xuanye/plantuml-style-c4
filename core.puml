@@ -12,12 +12,13 @@
 !define LAYOUT_TOP_DOWN top to bottom direction
 !define LAYOUT_LEFT_RIGHT left to right direction
 
-!function LAYOUT_AS_SKETCH()
+
+!procedure LAYOUT_AS_SKETCH()
 skinparam backgroundColor #EEEBDC
 skinparam handwritten true
-'skinparam defaultFontName "Comic Sans MS"
+skinparam defaultFontName "Comic Sans MS"
 center footer <font color=red>Warning:</font> Created for discussion, needs to be validated
-!endfunction
+!endprocedure
 
 
 !define RED_ARROW skinparam ArrowColor Red

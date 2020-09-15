@@ -72,7 +72,7 @@ skinparam database<<external_system>> {
 
 ' Layout
 ' ##################################
-!function LAYOUT_WITH_LEGEND_CN()
+!procedure LAYOUT_WITH_LEGEND_CN()
 hide stereotype
 legend right
 |=   颜色           |= 类型 |
@@ -81,9 +81,9 @@ legend right
 |<SYSTEM_BG_COLOR>   | 系统 |
 |<EXTERNAL_SYSTEM_BG_COLOR>      | 外部系统 |
 endlegend
-!endfunction
+!endprocedure
 
-!function LAYOUT_WITH_LEGEND()
+!procedure LAYOUT_WITH_LEGEND()
 hide stereotype
 legend right
 |=    color          |= Type |
@@ -92,7 +92,7 @@ legend right
 |<SYSTEM_BG_COLOR>   | system |
 |<EXTERNAL_SYSTEM_BG_COLOR>      | external system |
 endlegend
-!endfunction
+!endprocedure
 
 ' Elements
 ' ##################################

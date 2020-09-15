@@ -1,5 +1,7 @@
 // 将设置放入此文件中以覆盖默认设置
 {       
     "plantuml.diagramsRoot": "./",
-    "plantuml.exportOutDir": "./dist",      
+    "plantuml.exportOutDir": "./dist",
+    "commentTranslate.targetLanguage": "zh-CN",
+    
 }

@@ -6,7 +6,7 @@
 ' 设置方向
 LAYOUT_LEFT_RIGHT
 'LAYOUT_TOP_DOWN
-'LAYOUT_AS_SKETCH
+'LAYOUT_AS_SKETCH()
 
 
 actor customer

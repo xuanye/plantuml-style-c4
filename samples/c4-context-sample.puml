@@ -5,6 +5,7 @@
 !include c4_context.puml
 
 LAYOUT_WITH_LEGEND()
+'LAYOUT_AS_SKETCH()
 
 title System Context diagram for Internet Banking System
 

@@ -29,7 +29,7 @@ skinparam database<<container>> {
 
 ' Layout
 ' ##################################
-!function LAYOUT_WITH_LEGEND_CN()
+!procedure LAYOUT_WITH_LEGEND_CN()
 hide stereotype
 legend right
 |=    颜色          |= 类型 |
@@ -39,9 +39,9 @@ legend right
 |<EXTERNAL_SYSTEM_BG_COLOR>      | 外部系统 |
 |<CONTAINER_BG_COLOR>   | 容器 |
 endlegend
-!endfunction
+!endprocedure
 
-!function LAYOUT_WITH_LEGEND()
+!procedure LAYOUT_WITH_LEGEND()
 hide stereotype
 legend right
 |=              |= Type |
@@ -51,7 +51,7 @@ legend right
 |<EXTERNAL_SYSTEM_BG_COLOR>      | external system |
 |<CONTAINER_BG_COLOR>   | container |
 endlegend
-!endfunction
+!endprocedure
 
 ' Elements
 ' ##################################
