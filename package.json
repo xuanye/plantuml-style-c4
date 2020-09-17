@@ -1,0 +1,19 @@
+{
+  "name": "plantuml-style-c4",
+  "version": "1.1.3",
+  "description": "自定义PlantUml和C4 Model样式\r ---\r ![流程图](https://www.plantuml.com/plantuml/png/RLAnRjim4Dtv5TSfzc1fwIGNQ8eW3RgqWJ9qB5ZgP14vaIhl65T_7rACR1WG1u6wU-_ntIFlMNIGE19e8_RDodnmU3wm7YT2zSawGx7360W6aOcRkWxwN9si3F5lP0p6Eq4dbV5Z_JzgDsCzaNPPyS0o4nxCvthKB1XgumDMK-geEuWkCSR411aGUa_apzQTWAn3qAw3cxODd7OU8YEGDvfeLdUhERZgggVsyV7ddszj--ktKcgPJJKFPCth2uOtGgc694xOuh-8BBlzKJLfNfZq2O_Azh1xJhlAknSqCQGq7WOqh_limi5EGiIzWhIQ3zWFPnUHNCjiozzzEElGVLqvpXT6OGLla1boQi4J5-9ApbNh8i9KO2cF3PcoMFnqAQ3hR7yZPVdPirpOC_8jVVMVKDd_bwiKCPRJjk1FcD7Rvrv0RIfZABWLKsHxJPm2BALii_CGiBC1pORNPcsjUHmNcP9r8VSbxEqvcu-hW50k-wYs1soAuUKDWE0uaHQyCRzyrHBvVVg98xq3)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuanye/plantuml-style-c4.git"
+  },
+  "author": "xuanye wong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xuanye/plantuml-style-c4/issues"
+  },
+  "homepage": "https://github.com/xuanye/plantuml-style-c4#readme"
+}

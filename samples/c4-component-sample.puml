@@ -1,7 +1,7 @@
 @startuml component-diagram
-'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/c4_component.puml
+!include https://unpkg.com/plantuml-style-c4@latest/c4_component.puml
 ' uncomment the following line and comment the first to use locally
-!include c4_component.puml
+'!include c4_component.puml
 
 LAYOUT_WITH_LEGEND()
 'LAYOUT_AS_SKETCH()

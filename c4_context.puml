@@ -1,7 +1,7 @@
 @startuml c4_context
-'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/c4.puml
+!include https://unpkg.com/plantuml-style-c4@latest/c4.puml
 ' uncomment the following line and comment the first to use locally
-!include c4.puml
+'!include ./c4.puml
 
 ' Scope: A single software system.
 ' Primary elements: The software system in scope.

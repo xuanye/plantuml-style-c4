@@ -1,8 +1,8 @@
 @startuml corlor-define
 
-'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/material-colors.puml
+!include https://unpkg.com/plantuml-style-c4@latest/material-colors.puml
 ' uncomment the following line and comment the first to use locally
-!include  material-colors.puml
+'!include ./material-colors.puml
 ' Colors
 ' ##################################
 !define Black   #222222

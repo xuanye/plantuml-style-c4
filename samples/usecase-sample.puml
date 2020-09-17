@@ -1,7 +1,7 @@
 @startuml usecase-sample
-'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/core.puml
+!include https://unpkg.com/plantuml-style-c4@latest/core.puml
 ' uncomment the following line and comment the first to use locally
-!include core.puml
+'!include core.puml
 
 ' 设置方向
 LAYOUT_LEFT_RIGHT

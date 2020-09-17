@@ -1,7 +1,7 @@
 @startuml c4_component
-'!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/c4_container.puml
+!include https://unpkg.com/plantuml-style-c4@latest/c4_container.puml
 ' uncomment the following line and comment the first to use locally
-!include c4_container.puml
+'!include ./c4_container.puml
 
 ' Scope: A single container.
 ' Primary elements: Components within the container in scope.
