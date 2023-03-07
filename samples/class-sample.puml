@@ -1,7 +1,7 @@
 @startuml 
 
 
-!theme xuanye from ../
+!theme 4class from ../
 
 GRAY_ARROW()
 

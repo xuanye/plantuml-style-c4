@@ -2,6 +2,7 @@
 
 !theme xuanye from ../
 
+GREEN_ARROW()
 
 start
 :ClickServlet.handleRequest();
