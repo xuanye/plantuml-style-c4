@@ -1,23 +1,21 @@
 @startuml usecase-sample
-!include https://unpkg.com/plantuml-style-c4@latest/core.puml
-' uncomment the following line and comment the first to use locally
-'!include core.puml
+!theme xuanye from ../
 
-' 设置方向
-LAYOUT_LEFT_RIGHT
-'LAYOUT_TOP_DOWN
-'LAYOUT_AS_SKETCH()
-
+GRAY_ARROW()
 
 actor customer
 actor clerk
 
-UserCasePackage("checkout","买单") {
-    customer -- (checkout)
-    (checkout) .> (payment) : include
-    (help) .> (checkout) : extends
-    (checkout) -- clerk
+rectangle "==买单" <<usercase>>{
+    (checkout)
+    (payment) 
+    (help) 
 }
+
+customer -right- (checkout)
+(checkout) .down.> (payment) : include
+(help) .down.> (checkout) : extends
+(checkout) -right- clerk
 
 @enduml
 

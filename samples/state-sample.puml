@@ -1,10 +1,6 @@
 @startuml state-sample
-!include https://unpkg.com/plantuml-style-c4@latest/core.puml
-' uncomment the following line and comment the first to use locally
-'!include core.puml
 
-GREEN_ARROW
-LAYOUT_AS_SKETCH()
+!theme xuanye from ../
 
 title HTTP Request Parsing States
 
