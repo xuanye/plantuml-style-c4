@@ -4,15 +4,12 @@
 '' Author: Xuanye Wong
 '' Copyright (c) 2023 by  Xuanye Wong
 
-
 !$THEME = "xuanye"
-
 '!$BGCOLOR = "#f5f5f5"
 
 !if %not(%variable_exists("$BGCOLOR"))
 !$BGCOLOR = "transparent"
 !endif
-
 
 skinparam backgroundColor $BGCOLOR
 skinparam useBetaStyle false

@@ -126,7 +126,7 @@ skinparam backgroundColor $BGCOLOR
 skinparam useBetaStyle false
 
 
-!$PRIMARY_TEXT = $GRAY_100
+!$PRIMARY_TEXT = $BLACK
 !$PRIMARY_BG_LIGHT = $WHITE
 !$PRIMARY_BG = $GRAY_10
 !$PRIMARY_BORDER_LIGHT = $GRAY_20
