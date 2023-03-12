@@ -1,12 +1,6 @@
 @startuml sequence-sample
-!include https://unpkg.com/plantuml-style-c4@latest/core.puml
-' uncomment the following line and comment the first to use locally
-'!include core.puml
 
-LAYOUT_AS_SKETCH()
-' 设置红色箭头，分图定义有冲突
-RED_ARROW
-'MEGENTA_ARROW
+!theme xuanye from ../
 
 title <size:20>Sample Sequence</size>
 

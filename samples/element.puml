@@ -1,10 +1,7 @@
 @startuml element
-!include https://unpkg.com/plantuml-style-c4@latest/core.puml
-' uncomment the following line and comment the first to use locally
-'!include core.puml
 
 
-
+!theme xuanye from ../
 
 actor actor
 agent agent

@@ -1,0 +1,19 @@
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+#hexo
+.DS_Store
+.deploy
+node_modules
+db.json
+*.sublime-project
+*.sublime-workspace
+package-lock.json
+.generate/

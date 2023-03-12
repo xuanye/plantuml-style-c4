@@ -1,3 +1,20 @@
+''
+'' Xuanye theme 
+''
+'' Author: Xuanye Wong
+'' Copyright (c) 2023 by  Xuanye Wong
+
+
+!$THEME = "4class"
+
+'!$BGCOLOR = "#f5f5f5"
+
+!if %not(%variable_exists("$BGCOLOR"))
+!$BGCOLOR = "transparent"
+!endif
+
+
+
 
 !$DC_1= '#BBBBBB'
 !$DC_2= '#535353'
@@ -103,3 +120,105 @@
 
 !$BLACK = '#000000'
 !$WHITE = '#FFFFFF'
+
+
+skinparam backgroundColor $BGCOLOR
+skinparam useBetaStyle false
+
+
+!$PRIMARY_TEXT = $BLACK
+!$PRIMARY_BG_LIGHT = $WHITE
+!$PRIMARY_BG = $GRAY_10
+!$PRIMARY_BORDER_LIGHT = $GRAY_20
+!$PRIMARY_BORDER = $GRAY_80
+
+
+
+!$SUCCESS = $GREEN_50
+!$WARNING = $ORANGE_80
+!$DANGER  = $RED_50
+
+!$ARROW_COLOR = $GRAY_50
+!$START_COLOR = $GREEN_50
+!$END_COLOR   = $RED_50
+
+
+!$BORDER_THICKNESS = 1
+
+
+!procedure $success($msg)
+  <font color=$SUCCESS><b>$msg
+!endprocedure
+
+!procedure $failure($msg)
+  <font color=$DANGER><b>$msg
+!endprocedure
+
+!procedure $warning($msg)
+  <font color=$WARNING><b>$msg
+!endprocedure
+
+!procedure $primary_scheme()
+	FontColor $PRIMARY_TEXT
+	BorderColor $PRIMARY_BORDER
+	BackgroundColor $PRIMARY_BG_LIGHT
+	RoundCorner 0
+!endprocedure
+
+
+!procedure GRAY_ARROW()
+ 	skinparam ArrowColor  $GRAY_50
+!endprocedure
+!procedure BLUE_ARROW()
+ 	skinparam ArrowColor  $CYAN_50
+!endprocedure
+
+!procedure RED_ARROW()
+ 	skinparam ArrowColor  $RED_50
+!endprocedure
+
+!procedure GREEN_ARROW()
+ 	skinparam ArrowColor  $GREEN_20
+!endprocedure
+''
+'' Global Default Values
+''
+skinparam defaultFontName       "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif"
+skinparam defaultFontSize        12
+'skinparam dpi                    125
+skinparam shadowing              false
+skinparam roundcorner            5
+skinparam ParticipantPadding     10
+skinparam BoxPadding             10
+skinparam Padding                4
+skinparam ArrowColor             $ARROW_COLOR
+
+
+
+!startsub interface
+
+skinparam interface {
+	$primary_scheme()	
+}
+!endsub
+
+!startsub class
+
+skinparam class {
+
+	$primary_scheme()	
+
+	HeaderBackgroundColor $PRIMARY_BG_LIGHT
+	StereotypeFontColor $PRIMARY_TEXT
+	StereotypeFontSize 9
+
+	BorderThickness $BORDER_THICKNESS
+
+
+	AttributeFontColor $PRIMARY_TEXT
+	AttributeFontSize 10	
+	'AttributeIconSize 8
+}
+!endsub
+
+

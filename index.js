@@ -1,1 +1,1 @@
-console.log('plantuml-style-c4');
+console.log("plantuml-theme-xuanye-blue");

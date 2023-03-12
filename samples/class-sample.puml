@@ -1,37 +1,82 @@
-@startuml class-sample
-
-!include https://unpkg.com/plantuml-style-c4@latest/core.puml
-' uncomment the following line and comment the first to use locally
-'!include core.puml
-!include https://unpkg.com/plantuml-style-c4@latest/class-diagram-helper.puml
-' uncomment the following line and comment the first to use locally
-'!include class-diagram-helper.puml
+@startuml 
 
 
-GREY_ARROW
+!theme 4class from ../
 
-abstract class BaseClass {
-    +  AbstractMethod() : void
-    #  VirtualMethod(s:string) : int
-}
-class SubClass {
-    + AbstractMethod() : void
-    # VirtualMethod(s:string) : int
+GRAY_ARROW()
+
+
+title LogFramework - Class Diagram
+
+
+class LoggerManager {
+  -Dictionary<string,Logger> _loggers  
+  +Logger getLogger(string name)
 }
 
-interface IInterfaceA {
+class Logger {
+  -List<LoggerHandler> _handlers  
+  +void addHandler(LoggerHandler handler)
+  +void removeHandler(string name)
+  +void LogIt(LogMessage msg)
 }
 
-interface "IInterfaceA`1"<T> {
-    Value : T <<get>>
+class LoggerHandler{
+  -ILogFormatter _logFormater
+  -ILogWriter _logWriter
+  -ILogFilter _logFilter
+  
+  +void LogIt(LogMessage msg)
 }
-class ImplementClass {
-    + Value : int <<get>>
+
+interface ILogFormatter{
+  +string Format(LogMessage message)
 }
-BaseClass <|-- SubClass
-IInterfaceA <|-- "IInterfaceA`1"
-"IInterfaceA`1" "<int>" <|-- ImplementClass
+interface ILogWriter{
+  +void Write(string formattedMsg)
+}
+
+interface ILogFilter{
+ +bool Filter(LogMessage message)
+}
 
 
+class LevelFilter
 
+class FileWriter
+class ConsoleWriter
+
+class XmlFormatter
+class TextFormatter
+class JsonFormatter
+
+
+class LogMessage{
+  +string LogId
+  +string ThreadId
+  +string Mesasge
+  +LogLevel Level
+}
+enum LogLevel{
+  +TRACE
+  +DEBUG
+  +INFO
+  +WARN
+  +ERROR
+}
+
+
+Logger <-right- LoggerManager: use
+Logger o-down- LoggerHandler: aggregation
+ILogFormatter <-left- LoggerHandler: use
+ILogWriter <-up- LoggerHandler: use
+ILogFilter <-up- LoggerHandler: use
+ILogFilter <|.down. LevelFilter: realize
+ILogFormatter <|.right. XmlFormatter: realize
+ILogFormatter <|.down. TextFormatter: realize
+ILogFormatter <|.down. JsonFormatter: realize
+ILogWriter <|.down. FileWriter: realize
+ILogWriter <|.down. ConsoleWriter: realize
+LogMessage <-down- ILogFormatter: use
+LogLevel <-left- LogMessage: use
 @enduml
